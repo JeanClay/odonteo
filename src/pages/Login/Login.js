@@ -55,7 +55,7 @@ function Login() {
   }
 
   return (
-    <main>
+    <main data-testid='login-page'>
       { message.show &&
         <Message addClass={message.status}>
           {message.text}
@@ -69,6 +69,7 @@ function Login() {
             id='email'
             name='email'
             type='text'
+            data-testid='email'
             onChange={(e) => handleChange(e, setLoginInformation)}
           />
         </label>
@@ -79,10 +80,12 @@ function Login() {
             id='password'
             name='password'
             type='password'
+            data-testid='password'
             onChange={(e) => handleChange(e, setLoginInformation)}
           />
         </label>
         <Button
+          data-testid='loginbutton'
           addClassName='form-button'
           onClickFunction={makeLogin}
         >
